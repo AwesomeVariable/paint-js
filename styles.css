@@ -72,4 +72,5 @@ body {
 .range {
   position: relative;
   bottom: 55px;
+  cursor: pointer;
 }

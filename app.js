@@ -5,11 +5,13 @@ const range = document.getElementById("js-range");
 const mode = document.getElementById("js-mode");
 const saveBtn = document.getElementById("js-save");
 
+const delBtn = document.getElementById("js-delete")
+
 const INITIAL_COLOR = "#2c2c2c";
 const ctx = canvas.getContext('2d');
 canvas.width = 1500;
 canvas.height= 700;
-ctx.lineWidth = "2.5"
+ctx.lineWidth = "7.5"
 
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, 1500, 700);
@@ -100,9 +102,19 @@ function save(){
   link.href = img;
   link.download = "PaintJS";
   link.click();
-  console.log(link)
+
 }
 
 if(saveBtn) {
-  saveBtn.addEventListener("click", save)
+  saveBtn.addEventListener("click", save);
+}
+
+function del(){
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, 1500, 700);
+}
+
+
+if(delBtn) {
+  delBtn.addEventListener("click", del);
 }
