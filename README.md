@@ -1,2 +1,2 @@
-# paint-js
+# PaintJS
 Painting canvas made with JS.
