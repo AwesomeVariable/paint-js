@@ -11,7 +11,7 @@ const INITIAL_COLOR = "#2c2c2c";
 const ctx = canvas.getContext('2d');
 canvas.width = 1500;
 canvas.height= 700;
-ctx.lineWidth = "7.5"
+ctx.lineWidth = "7.5";
 
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, 1500, 700);
