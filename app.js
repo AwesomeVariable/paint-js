@@ -1,17 +1,18 @@
+//Selecting elements from index.HTML
 const canvas = document.getElementById("js-canvas");
 const color = document.getElementsByClassName("js-color");
 const range = document.getElementById("js-range");
-const ctx = canvas.getContext('2d');
-const mode = document.getElementById("js-mode")
-const saveBtn = document.getElementsById("js-save")
-const INITIAL_COLOR = "#2c2c2c";
+const mode = document.getElementById("js-mode");
+const saveBtn = document.getElementById("js-save");
 
+const INITIAL_COLOR = "#2c2c2c";
+const ctx = canvas.getContext('2d');
 canvas.width = 1500;
-canvas.height= 900;
+canvas.height= 700;
 ctx.lineWidth = "2.5"
 
 ctx.fillStyle = "white";
-ctx.fillRect(0, 0, 1500, 900);
+ctx.fillRect(0, 0, 1500, 700);
 ctx.strokeStyle = "#2c2c2c";
 ctx.fillStyle = "";
 
@@ -45,7 +46,7 @@ function mouseDown(event) {
 
 function canvasClick(){
   if (filling) {
-    ctx.fillRect(0, 0, 1500, 900);
+    ctx.fillRect(0, 0, 1500, 700);
 
   }
 }
@@ -93,3 +94,15 @@ if (mode) {
   mode.addEventListener("click", changeMode)
 }
 
+function save(){
+  const img = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = img;
+  link.download = "PaintJS";
+  link.click();
+  console.log(link)
+}
+
+if(saveBtn) {
+  saveBtn.addEventListener("click", save)
+}
